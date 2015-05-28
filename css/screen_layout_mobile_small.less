@@ -1,0 +1,86 @@
+@import "colors";
+@import "keyframes";
+
+/*******************************************************************************/
+/****** STYLING FOR IPHONE 4/5 OR OTHER MOBILE DEVICES WITH MAX-WIDTH: 349 *****/
+/*******************************************************************************/
+
+/* ADJUSTS BACKGROUND IMAGE TO CENTER THE WEIGHTLIFTER */
+body {
+    background: url("../images/bg.jpg") no-repeat 40% center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* SCALES AND POSITIONS LOGO AND MENU BUTTON, REMOVES LOGIN LINK IN NAV BAR */
+#nav-header {
+    #logo {
+        height: 2rem;
+        margin: 1.25rem 0rem 0rem 1.25rem;
+        opacity: 1.0;
+    }
+    .links {
+        .login {
+            display: none;
+            & > p {
+                display: none;
+            }
+        }
+        .menu-btn-container {
+            margin: .5rem .5rem 0rem 0rem;
+            .menu-btn:before {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+/* SCALES MOTTO AND REMOVES MOTIVATIONAL STATEMENT, RE-STYLES THE WORD "INDIVIDUALS" TO THINNER FONT */
+.motto {
+    margin: auto auto 0px auto;
+    #bold-wrapper {
+        .we-train {
+            font-size: 2rem;
+            margin: .75rem .2rem auto auto;
+        }
+        .individuals {
+            font-size: 1.143rem;
+            margin-left: 0.2rem;
+            .ind-mobile {
+                font-family: Colfax-light;
+            }
+        }
+    }
+    .statement {
+        display: none;
+    }
+
+    /* WIDENS BUTTONS' WIDTH TO FILL MORE OF THE SCREEN, REPLACES JOURNEY BUTTON WITH LOGIN BUTTON, ADDS A SHORT JOURNEY STATEMENT */
+    .button-holder {
+        .home-btn {
+            height: 3.75rem;
+            width: 18rem;
+        }
+        .signup-btn {
+            margin: 5rem auto 0rem auto;
+        }
+        .journey-btn {
+            display: none;
+        }
+        .login-mobile-btn {
+            display: block;
+        }
+        .journey-mobile {
+            display: inline-block;
+            font-size: 1.2rem;
+            margin-top: 1.75rem;
+        }
+    }
+}
+
+/* REMOVES TODAY AT THE GYM SECTION FROM THE SLIDE-OUT MENU */
+.today-gym {
+    display: none;
+}

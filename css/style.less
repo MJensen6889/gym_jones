@@ -1,0 +1,473 @@
+@import "colors";
+@import "keyframes";
+
+/***********************************/
+/****** CUSTOM FONTS AND ICONS *****/
+/***********************************/
+
+@font-face {
+    font-family: "Colfax-black";
+    src: url("fonts/Colfax/Colfax-Black.eot");
+    src: local("☺"),
+    url("fonts/Colfax/Colfax-Black.woff") format("woff"),
+    url("fonts/Colfax/Colfax-Black.ttf") format("opentype"),
+    url("fonts/Colfax/Colfax-Black.svg#Colfax-Black") format("svg");
+}
+
+@font-face {
+    font-family: "Colfax-medium";
+    src: url("fonts/Colfax/Colfax-Medium.eot");
+    src: local("☺"),
+    url("fonts/Colfax/Colfax-Medium.woff") format("woff"),
+    url("fonts/Colfax/Colfax-Medium.ttf") format("opentype"),
+    url("fonts/Colfax/Colfax-Medium.svg#Colfax-Medium") format("svg");
+}
+
+@font-face {
+    font-family: "Colfax-light";
+    src: url("fonts/Colfax/Colfax-Light.eot");
+    src: local("☺"),
+    url("fonts/Colfax/Colfax-Light.woff") format("woff"),
+    url("fonts/Colfax/Colfax-Light.ttf") format("opentype"),
+    url("fonts/Colfax/Colfax-Light.svg#Colfax-Light") format("svg");
+}
+
+@font-face {
+    font-family: "icofont";
+    src: url("fonts/Icons/icons.eot");
+    src: local("☺"),
+    url("fonts/Icons/icons.woff") format("woff"),
+    url("fonts/Icons/icons.ttf") format("opentype"),
+    url("fonts/Icons/icons.svg#icons") format("svg");
+}
+
+/**********************************/
+/****** BASIC ELEMENT STYLING *****/
+/**********************************/
+
+html {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #1B1B1B;
+    background: url("../images/bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    /* STYLES ACTIVE LINK SELECTED IN SIDEBAR */
+    &.home a.home:link > .side-menu-block, &.home a.home:visited > .side-menu-block,
+    &.about a.about:link > .side-menu-block, &.about a.about:visited > .side-menu-block,
+    &.calendar a.calendar:link > .side-menu-block, &.calendar a.calendar:visited > .side-menu-block,
+    &.knowledge a.knowledge:link > .side-menu-block, &.knowledge a.knowledge:visited > .side-menu-block,
+    &.media a.media:link > .side-menu-block, &.media a.media:visited > .side-menu-block,
+    &.pricing a.pricing:link > .side-menu-block, &.pricing a.pricing:visited > .side-menu-block,
+    &.seminars a.seminars:link > .side-menu-block, &.seminars a.seminars:visited > .side-menu-block,
+    &.shop a.shop:link > .side-menu-block, &.shop a.shop:visited > .side-menu-block,
+    &.tour a.tour:link > .side-menu-block, &.tour a.tour:visited > .side-menu-block,
+    &.training a.training:link > .side-menu-block, &.training a.training:visited > .side-menu-block {
+        background-color: #000000;
+        color: @main-orange;
+        border-left: solid @main-orange 0.42857143rem;
+    }
+}
+
+/* VISITED LINK IN SIDEBAR HAS GREY FONT */
+a {
+    text-decoration: none;
+    &:visited > .side-menu-block {
+        color: #808080 !important;
+    }
+}
+
+/*************************/
+/****** BODY CONTENT *****/
+/*************************/
+
+/* WRAPPER FOR CONTENT SHIFT WHEN SIDE MENU SLIDES OUT */
+.page-content {
+    height: 100vh;
+    position: relative;
+    z-index: 0;
+    left: 0rem;
+}
+
+/* WRAPS LOGO, LOGIN LINK, AND SIDE MENU BUTTON */
+#nav-header {
+    display: block;
+    position: relative;
+    #logo {
+        display: inline-block;
+        height: 2.64285714rem;
+        margin: 1.71428571rem 0rem 0rem 4.28571429rem;
+        padding: 0rem;
+        opacity: .8;
+
+        /* LOGO BRIGHTENS TO WHITE WHEN HOVERED */
+        &:hover {
+            animation: opacity-increase .3s forwards;
+            -moz-animation: opacity-increase .3s forwards;
+            -webkit-animation: opacity-increase .3s forwards;
+        }
+    }
+
+    /* WRAPS LOGIN AND SIDE MENU BUTTON FOR LAYOUT */
+    .links {
+        position: relative;
+        right: 0rem;
+        float: right;
+        color: @main-text;
+        display: inline-block;
+        li {
+            display: inline-block;
+        }
+        /* LOGIN DIV MADE TO FUNCTION LIKE A LINK TO A MODAL (NOT YET CREATED) */
+        .login {
+            margin: 0 3.42857143rem 0 0;
+            font-family: Colfax-medium;
+            display: inline-block;
+            font-size: 1.14285714rem;
+            cursor: pointer;
+        }
+
+        /* USED TO DETERMINE 31px WIDTH FOR MENU BUTTON */
+        .menu-btn-container {
+            width: 2.35714286rem;
+            height: auto;
+            margin-right: 4.28571429rem;
+
+            /* CUSTOM MENU FONT USED AS BUTTON TO SLIDE OPEN/CLOSE SIDE MENU */
+            .menu-btn:before {
+                font-family: icofont;
+                content: "\e602";
+                font-size: 1.5rem; /* equals 31px in width */
+                text-decoration: none;
+                color: @main-text;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* WRAPS CENTER CONTENT (we-train, individuals, statement, AND buttons) FOR CENTERED LAYOUT */
+.motto {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    float: center;
+    max-width: 50rem;
+    max-height: 24rem;
+
+    /* WRAPS we-train AND individuals FOR LAYOUT */
+    #bold-wrapper {
+        text-align: center;
+
+        /* LARGE "WE TRAIN" SECTION OF HOME PAGE MOTTO */
+        .we-train {
+            font-family: Colfax-black;
+            font-size: 6rem;
+            color: @main-text;
+            line-height: 96%;
+            text-align: right;
+            display: inline-block;
+            margin-right: 0.5714rem;
+            margin-bottom: 0;
+        }
+
+        /* 3 CUSTOMER TYPES SET RIGHT OF "WE TRAIN" */
+        .individuals {
+            font-family: Colfax-medium;
+            font-size: 3.429rem;
+            color: @main-text;
+            line-height: 110%;
+            text-align: left;
+            display: inline-block;
+            margin-left: 0.57142857rem;
+            margin-bottom: 0;
+            .ath-red {
+                color: @main-orange;
+            }
+        }
+    }
+
+    /* MOTIVATIONAL STATEMENT */
+    .statement {
+        display: inline-block;
+        font-family: Colfax-light;
+        font-size: 1.28571429rem;
+        color: @main-text;
+        line-height: 134%;
+        text-align: center;
+        margin-top: 0.57142857rem;
+        max-width: 48rem;
+    }
+
+    /* WRAPPER AROUND SIGN-UP AND JOURNEY BUTTONS ON HOME PAGE */
+    .button-holder {
+        text-align: center;
+
+        /* COMMON STYLING FOR BOTH HOME-PAGE BUTTONS */
+        .home-btn {
+            height: 4.28571429rem;
+            width: 14.28571429rem;
+            font-family: Colfax-medium;
+            font-size: 1.28571429rem;
+            line-height: 117%;
+        }
+        .signup-btn {
+            background: @main-orange;
+            border: none;
+            color: @main-text;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 3.57142857rem 1.42857143rem 0rem 1.42857143rem;
+
+            /* HOVER CAUSES BUTTON TO "BRIGHTEN" */
+            &:hover {
+                animation: brighten-button .3s forwards;
+                -webkit-animation: brighten-button .3s forwards;
+                -moz-animation: brighten-button .3s forwards;
+            }
+        }
+
+        /* NOT USED FOR MOBILE DEVICES */
+        .journey-btn {
+            background: none;
+            border: 0.28571429rem solid @main-accent;
+            color: @main-text;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 1.07142857rem 1.42857143rem 0rem 1.42857143rem;
+            &:hover {
+                animation: button-fill .3s forwards;
+                -moz-animation: button-fill .3s forwards;
+                -webkit-animation: button-fill .3s forwards;
+            }
+        }
+
+        /* USED FOR MOBILE DEVICES */
+        .login-mobile-btn {
+            display: none;
+            background: none;
+            border: 0.28571429rem solid @main-accent;
+            color: @main-text;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 1.07142857rem auto 0rem auto;
+            &:hover {
+                animation: button-fill .3s forwards;
+                -moz-animation: button-fill .3s forwards;
+                -webkit-animation: button-fill .3s forwards;
+            }
+        }
+        /* USED FOR MOBILE DEVICES */
+        .journey-mobile {
+            display: none;
+            color: @main-orange;
+            font-family: Colfax-medium;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+        }
+    }
+}
+
+/***************************/
+/****** SLIDE-OUT MENU *****/
+/***************************/
+
+.side-menu {
+    background-color: #1B1B1B;
+    height: 100%;
+    width: 18.57142857rem;
+    z-index: 0;
+    position: fixed;
+    top: 0rem;
+    right: -18.57142857rem;
+    margin: 0rem;
+
+    /* OVERALL ANIMATION CONTAINER */
+    .animation-container-middle {
+        overflow: hidden;
+
+        .animation-container-inside {
+
+            .exit-btn-container {
+                height: 3.92857143rem;
+                margin-bottom: 1rem;
+
+                /* CUSTOM FONT USED AS EXIT BUTTON TO SLIDE MENU CLOSED */
+                .exit-btn:before {
+                    font-family: icofont;
+                    content: "\e601";
+                    float: right;
+                    margin: 1.71428571rem 2.85714286rem 0 0;
+                    font-size: 1.71428571rem;
+                    text-decoration: none;
+                    color: @main-text;
+                    cursor: pointer;
+                    height: 2.85714286rem;
+                }
+            }
+
+            .side-menu-list {
+
+                /* CONTAINER USED FOR EACH LINK IN THE MENU */
+                .side-menu-block {
+                    color: @main-text;
+                    position: relative;
+                    font-family: Colfax-medium;
+                    line-height: 286%;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    width: 18.57142857rem;
+                    padding-left: 1.71428571rem;
+                    &:hover {
+                        background-color: #000000;
+                    }
+                }
+            }
+
+            /* SECTION WRAPPING TODAY AT THE GYM AT BOTTOM OF SLIDE-OUT MENU */
+            .today-gym {
+                width: 15rem;
+                display: block;
+                margin-top: 20px;
+                padding: 20px 20px 20px 35px;
+                border-top: solid grey 1px;
+                .today-title {
+                    font-family: Colfax-medium;
+                    font-size: 1rem;
+                    color: @main-text;
+                }
+                .date-wrap {
+
+                    /* CIRCLE CONTAINING THE DATE */
+                    #circle {
+                        display: inline-block;
+                        width: 4rem;
+                        height: 4rem;
+                        border: solid @main-accent 0.1429rem;
+                        background: none;
+                        -moz-border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        border-radius: 50%;
+                        color: @main-text;
+                        font-family: Colfax-medium;
+                        text-align: center;
+                        .date-container {
+                            margin: .5rem 0 0 0;
+                            .month {
+                                margin-bottom: -.3rem;
+                                font-family: Colfax-black;
+                                font-size: 0.85714286rem;
+                                line-height: 150%;
+                            }
+                            .day {
+                                font-family: Colfax-light;
+                                font-size: 1.71428571rem;
+                                margin-top: 0;
+                                line-height: 121%;
+                            }
+                        }
+                    }
+
+                    /* THIS WOULD BE A LINK TO A VIDEO */
+                    .fyf-text {
+                        display: inline-block;
+                        font-family: Colfax-medium;
+                        color: @main-text;
+                        margin: 0 0 0 1rem;
+                        cursor: pointer;
+                    }
+
+                    /* ANNOUNCES NEW VIDEOS */
+                    .video-statement {
+                        margin-top: 2rem;
+                        font-family: Colfax-light;
+                        color: @main-text;
+                        font-size: 0.78571429rem;
+                        line-height: 164%;
+                    }
+
+                    /* THIS WOULD LINK TO GALLERY? */
+                    .read-more {
+                        margin-top: 1rem;
+                        font-family: Colfax-light;
+                        color: @main-text;
+                        font-size: 1rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* INVISIBLE CHECKBOX USED TO TOGGLE SIDE MENU */
+#sidebar-btn {
+    display: none;
+    /* SHIFTS AND ANIMATES THE SIDE MENU FROM RIGHT SIDE ONTO SCREEN */
+    &:checked + .page-wrap {
+        .side-menu {
+            animation: menu-shift .6s forwards;
+            -moz-animation: menu-shift .6s forwards;
+            -webkit-animation: menu-shift .6s forwards;
+            .animation-container-middle {
+                -webkit-animation: fold-out .6s forwards;
+                animation: fold-out .6s forwards;
+                -moz-animation: fold-out .6s forwards;
+
+                .animation-container-inside {
+                    -webkit-animation: fold-out .6s forwards;
+                    animation: fold-out .6s forwards;
+                    -moz-animation: fold-out .6s forwards;
+                }
+            }
+        }
+        /* SHIFTS THE CONTENTS OF THE PAGE WITH THE SIDE MENU */
+        .page-content {
+            animation: content-shift .6s forwards;
+            -moz-animation: content-shift .6s forwards;
+            -webkit-animation: content-shift .6s forwards;
+        }
+    }
+    /* SHIFTS AND ANIMATES THE SIDE MENU BACK TO THE RIGHT OFF SCREEN */
+    &:not(:checked) + .page-wrap {
+        .side-menu {
+            animation: menu-shift-back .6s forwards;
+            -moz-animation: menu-shift-back .6s forwards;
+            -webkit-animation: menu-shift-back .6s forwards;
+            .animation-container-middle {
+                -webkit-animation: fold-in .6s forwards;
+                animation: fold-in .6s forwards;
+                -moz-animation: fold-in .6s forwards;
+                .animation-container-inside {
+                    -webkit-animation: fold-in .6s forwards;
+                    animation: fold-in .6s forwards;
+                    -moz-animation: fold-in .6s forwards;
+                }
+            }
+        }
+        /* SHIFTS THE CONTENTS OF THE PAGE RIGHT WITH THE SIDE MENU EXIT */
+        .page-content {
+            animation: content-shift-back .6s forwards;
+            -moz-animation: content-shift-back .6s forwards;
+            -webkit-animation: content-shift-back .6s forwards;
+        }
+    }
+
+}
+
+
+
+
+

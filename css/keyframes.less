@@ -1,0 +1,287 @@
+/* Increase opacity from .8 to 1.0 */
+@-webkit-keyframes opacity-increase {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-moz-keyframes opacity-increase {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 1.0;
+    }
+}
+
+@keyframes opacity-increase {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 1.0;
+    }
+}
+
+/* Brighten Sing-up Button */
+@-webkit-keyframes brighten-button {
+    from {
+        background: @main-orange;
+    }
+    to {
+        background: #e50800;
+    }
+}
+
+@-moz-keyframes brighten-button {
+    from {
+        background: @main-orange;
+    }
+    to {
+        background: #e50800;
+    }
+}
+
+@keyframes brighten-button {
+    from {
+        background: @main-orange;
+    }
+    to {
+        background: #e50800;
+    }
+}
+
+/* Fill background of button and change font color */
+@-webkit-keyframes button-fill {
+    from {
+        background: none;
+        color: @main-text
+    }
+    to {
+        background: @main-accent;
+        color: #000000;
+    }
+}
+
+@-moz-keyframes button-fill {
+    from {
+        background: none;
+        color: @main-text
+    }
+    to {
+        background: @main-accent;
+        color: #000000;
+    }
+}
+
+@keyframes button-fill {
+    from {
+        background: none;
+        color: @main-text
+    }
+    to {
+        background: @main-accent;
+        color: #000000;
+    }
+}
+
+/* Side menu slide in from left */
+@-webkit-keyframes menu-shift {
+    0% {
+        right: -18.57142857rem;
+    }
+    100% {
+        right: 0rem;
+    }
+}
+
+@-moz-keyframes menu-shift {
+    0% {
+        right: -18.57142857rem;
+    }
+    100% {
+        right: 0rem;
+    }
+}
+
+@keyframes menu-shift {
+    0% {
+        right: -18.57142857rem;
+    }
+    100% {
+        right: 0rem;
+    }
+}
+
+/* Side menu slide right back off screen for exit */
+@-webkit-keyframes menu-shift-back {
+    100% {
+        right: -18.57142857rem;
+    }
+    0% {
+        right: 0rem;
+    }
+}
+
+@-moz-keyframes menu-shift-back {
+    100% {
+        right: -18.57142857rem;
+    }
+    0% {
+        right: 0rem;
+    }
+}
+
+@keyframes menu-shift-back {
+    100% {
+        right: -18.57142857rem;
+    }
+    0% {
+        right: 0rem;
+    }
+}
+
+/* Homepage content slide left to allow room for menu shift */
+@-webkit-keyframes content-shift {
+    0% {
+        left: 0rem;
+    }
+    100% {
+        left: -18.57142857rem;
+    }
+}
+
+@-moz-keyframes content-shift {
+    0% {
+        left: 0rem;
+    }
+    100% {
+        left: -18.57142857rem;
+    }
+}
+
+@keyframes content-shift {
+    0% {
+        left: 0rem;
+    }
+    100% {
+        left: -18.57142857rem;
+    }
+}
+
+/* Homepage content slide right with menu during menu exit */
+@-webkit-keyframes content-shift-back {
+    100% {
+        left: 0rem;
+    }
+    0% {
+        left: -18.57142857rem;
+    }
+}
+
+@-moz-keyframes content-shift-back {
+    100% {
+        left: 0rem;
+    }
+    0% {
+        left: -18.57142857rem;
+    }
+}
+
+@keyframes content-shift-back {
+    100% {
+        left: 0rem;
+    }
+    0% {
+        left: -18.57142857rem;
+    }
+}
+
+/* Side menu fold open */
+@-webkit-keyframes fold-out {
+    0% {
+        -webkit-transform: perspective(1000px) rotatey(81deg);
+        -webkit-transform-origin: left;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition-property: all;
+        width: 1.8rem;
+    }
+    100% {
+        -webkit-transform: rotatey(0deg);
+        width: 18.57142857rem;
+    }
+}
+
+@-moz-keyframes fold-out {
+    0% {
+        -moz-transform: perspective(1000px) rotatey(81deg);
+        -moz-transform-origin: left;
+        -moz-transform-style: preserve-3d;
+        -moz-transition-property: all;
+        width: 1.8rem;
+    }
+    100% {
+        -moz-transform: rotatey(0deg);
+        width: 18.57142857rem;
+    }
+}
+
+@keyframes fold-out {
+    0% {
+        transform: perspective(1000px) rotatey(81deg);
+        transform-origin: left;
+        transform-style: preserve-3d;
+        transition-property: all;
+        width: 1.8rem;
+    }
+    100% {
+        transform: rotatey(0deg);
+        width: 18.57142857rem;
+    }
+}
+
+/* Side menu fold closed */
+@-webkit-keyframes fold-in {
+    100% {
+        -webkit-transform: perspective(1000px) rotatey(81deg);
+        -webkit-transform-origin: left;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition-property: all;
+        width: 1.8rem;
+    }
+    0% {
+        -webkit-transform: rotatey(0deg);
+        width: 18.57142857rem;
+    }
+}
+
+@-moz-keyframes fold-in {
+    100% {
+        -moz-transform: perspective(1000px) rotatey(81deg);
+        -moz-transform-origin: left;
+        -moz-transform-style: preserve-3d;
+        -moz-transition-property: all;
+        width: 1.8rem;
+    }
+    0% {
+        -moz-transform: rotatey(0deg);
+        width: 18.57142857rem;
+    }
+}
+
+@keyframes fold-in {
+    100% {
+        transform: perspective(1000px) rotatey(81deg);
+        transform-origin: left;
+        transform-style: preserve-3d;
+        transition-property: all;
+        width: 1.8rem;
+    }
+    0% {
+        transform: rotatey(0deg);
+        width: 18.57142857rem;
+    }
+}

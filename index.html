@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Gym Jones</title>
+    <!-- layout at device width -->
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet/less" type="text/css" href="css/style.less"/>
+    <!-- stylesheets for mobile screen -->
+    <!-- IPhone6 -->
+    <link rel="stylesheet/less" type="text/css" media="only screen and (min-width: 350px) and (max-width: 816px)"
+          href="css/screen_layout_mobile_medium.less"/>
+    <!-- Iphone4/5 -->
+    <link rel="stylesheet/less" type="text/css" media="only screen and (min-width: 0px) and (max-width: 349px)"
+          href="css/screen_layout_mobile_small.less"/>
+
+    <script src="js/less.js" type="text/javascript"></script>
+</head>
+
+<body class="home">
+
+<!-- invisible checkbox used to toggle slide-out menu -->
+<input type="checkbox" id="sidebar-btn"/>
+
+<div class="page-wrap">
+
+    <!-- wrapper used to shift content with slide-out menu -->
+    <div class="page-content">
+
+        <!-- wraps logo, login, and menu button -->
+        <header id="nav-header">
+            <a href="./index.html">
+                <img id="logo" src="images/logo.svg"/>
+            </a>
+            <!-- wraps login and menu button for layout -->
+            <section class="links">
+                <ul>
+
+                    <!-- login not available on mobile devices -->
+                    <li class="login">
+                        <p>LOG IN</p>
+                    </li>
+                    <li class="menu-btn-container">
+                        <label for="sidebar-btn" class="menu-btn"></label>
+                    </li>
+                </ul>
+            </section>
+        </header>
+
+        <!-- wraps centered content of home page -->
+        <article class="motto">
+            <div id="bold-wrapper">
+                <div class="we-train">
+                    WE<br/>TRAIN
+                </div>
+                <div class="individuals">
+                    <span class="ath-red">ATHLETES.</span><br/>
+                    PROFESSIONALS.<br/>
+                    <span class="ind-mobile">INDIVIDUALS.</span><br/>
+                </div>
+            </div>
+            <div class="statement">
+                To suffer, to throw former selves on the fire to overcome and to change. For some
+                of these individuals, fitness can mean the difference between life and death.
+            </div>
+
+            <!-- contains buttons for layout -->
+            <div class="button-holder">
+                <button class="signup-btn home-btn">
+                    SIGN UP
+                </button>
+
+                <!-- button not visible on mobile devices -->
+                <button class="journey-btn home-btn">
+                    TAKE A JOURNEY
+                </button>
+
+                <!-- button ONLY visible on mobile devices -->
+                <button class="login-mobile-btn home-btn">
+                    LOGIN
+                </button>
+
+                <!-- only present on mobile devices -->
+                <div class="journey-mobile">TAKE A JOURNEY</div>
+            </div>
+            <!-- end of button-holder -->
+        </article>
+        <!-- end of motto -->
+    </div>
+    <!-- end of page-content -->
+
+    <!-- Side Menu that slides out -->
+    <div class="side-menu">
+
+        <!-- containers used for fold-out animation of side-menu -->
+        <div class="animation-container-middle">
+            <div class="animation-container-inside">
+
+                <!-- Custom font used as exit button -->
+                <div class="exit-btn-container">
+                    <label for="sidebar-btn" class="toggle">
+                        <span class="exit-btn"></span>
+                    </label>
+                </div>
+
+                <!-- List of links in side-menu -->
+                <div class="side-menu-list">
+                    <a href="./index.html" class="home">
+                        <div class="side-menu-block"><span>HOME</span></div>
+                    </a>
+                    <a href="./tour.html" class="tour">
+                        <div class="side-menu-block"><span>TOUR</span></div>
+                    </a>
+                    <a href="./pricing.html" class="pricing">
+                        <div class="side-menu-block"><span>PRICING</span></div>
+                    </a>
+                    <a href="./training.html" class="training">
+                        <div class="side-menu-block"><span>TRAINING</span></div>
+                    </a>
+                    <a href="./media.html" class="media">
+                        <div class="side-menu-block"><span>MEDIA</span></div>
+                    </a>
+                    <a href="./about.html" class="about">
+                        <div class="side-menu-block"><span>ABOUT</span></div>
+                    </a>
+                    <a href="./knowledge.html" class="knowledge">
+                        <div class="side-menu-block"><span>KNOWLEDGE</span></div>
+                    </a>
+                    <a href="./seminars.html" class="seminars">
+                        <div class="side-menu-block"><span>SEMINARS</span></div>
+                    </a>
+                    <a href="./calendar.html" class="calendar">
+                        <div class="side-menu-block"><span>CALENDAR</span></div>
+                    </a>
+                    <a href="./shop.html" class="shop">
+                        <div class="side-menu-block"><span>SHOP</span></div>
+                    </a>
+                </div>
+                <!-- end of side-menu-list -->
+
+                <div class="today-gym">
+                    <p class="today-title">
+                        TODAY IN THE GYM
+                    </p>
+
+                    <div class="date-wrap">
+                        <div id="circle">
+                            <!-- Unsure how to get current Month Day without using JavaScript so hard-coded a date -->
+                            <div class="date-container">
+                                <div class="month">MAR</div>
+                                <div class="day">21</div>
+                            </div>
+                        </div>
+                        <div class="fyf-text">
+                            FYF VIDEO
+                        </div>
+                        <section class="video-statement">
+                            Here are two new 'FYF' videos: 'FYF' 2-14-14 and 'FYF' 2-28-14. They are available to view
+                            here in the calendar or you can also access them through the gallery section.
+                        </section>
+                        <div class="read-more">
+                            READ MORE
+                        </div>
+                    </div>
+                    <!-- end of date-wrap -->
+                </div>
+                <!-- end of today-gym -->
+            </div>
+            <!-- end of animation-container-inside -->
+        </div>
+        <!-- end of animation-container-middle -->
+    </div>
+    <!-- end of side-menu -->
+</div>
+
+<!-- end of page-wrap -->
+
+
+</body>
+</html>
